@@ -1,0 +1,26 @@
+{%extends 'layout.html'%}
+    {% block content%}
+    {%if posts %}
+      <h1>Salary Details</h1>
+        <table class="table">
+          <tr class="table-header">
+            <th class="table-cell">Salary ID</th>
+            <th class="table-cell">Employee Code</th>
+            <th class="table-cell">Basic Pay</th>
+            <th class="table-cell">Dearness Allowance</th>
+            <th class="table-cell">Gross Pay</th>
+          </tr>
+          {% for s in posts %}
+            <tr class="table-row">
+              <td class="table-cell">{{s[0]}}</td>
+              <td class="table-cell">{{s[1]}}</td>
+              <td class="table-cell">{{s[2]}}</td>
+              <td class="table-cell">{{s[3]}}</td>
+              <td class="table-cell">{{s[4]}}</td>
+              
+
+            </tr>
+          {% endfor %} 
+        </table>
+    {% endif %}
+    {% endblock %}

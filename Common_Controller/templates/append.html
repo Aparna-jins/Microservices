@@ -1,0 +1,41 @@
+{%extends 'layout.html'%}
+  {% block content%}
+    {%if r3,el %}
+      <h1>Common Details</h1>
+        <table class="table">
+          <tr class="table-header">
+            <th class="table-cell">Employee Code</th>
+            <th class="table-cell">Employee Name</th>
+            <th class="table-cell">Address</th>
+            <th class="table-cell">Phone Number</th>
+            <th class="table-cell">Email_ID</th>
+            <th class="table-cell">Basic Pay</th>
+            <th class="table-cell">Dearness Allowance</th>
+            <th class="table-cell">Gross Pay</th>
+          </tr>
+          {% for res1 in r3 %}
+            <tr class="table-row">
+              <td class="table-cell">{{res1['EmpCode']}}</td>
+              <td class="table-cell">{{res1['EmpName']}}</td>
+              <td class="table-cell">{{res1['Address']}}</td>
+              <td class="table-cell">{{res1['Phone_No']}}</td>
+              <td class="table-cell">{{res1['Email_ID']}}</td>
+              <td class="table-cell">{{res1['Basic']}}</td>
+              <td class="table-cell">{{res1['DA']}}</td>
+              <td class="table-cell">{{res1['Gross']}}</td>
+            </tr>
+          {% endfor %}
+          <!-- {% for res2 in r2 %}
+            <tr class="table-row">
+              <td class="table-cell">{{res2['Basic']}}</td>
+              <td class="table-cell">{{res2['DA']}}</td>
+              <td class="table-cell">{{res2['Gross']}}</td>
+             
+
+            </tr>
+          {% endfor %}  -->
+        </table><br><br><br>
+        <p class="time">Time taken = {{el}}s<p>
+    {% endif %}
+    
+  {% endblock %}
